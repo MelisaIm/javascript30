@@ -12,11 +12,14 @@
   a {
     color: white;
   }
+  button {
+    font-weight: bold;
+  }
   </style>
 </head>
 <body>
   <div>
-  <span>Draw something! | <a href="https://github.com/MelisaIm/javascript30">Melisa Im</a> | <a href="https://www.javascript30.com">JavaScript30 Challenge</a></span>
+  <span>Draw something! <button onclick="clearFunction()">PRESS TO CLEAR</button> | <a href="https://github.com/MelisaIm/javascript30">Melisa Im</a> | <a href="https://www.javascript30.com">JavaScript30 Challenge</a></span>
   </div>
 <canvas id="draw" width="800" height="800"></canvas>
 <script>
@@ -34,6 +37,10 @@ canvas.height = window.innerHeight;
 ctx.lineJoin = "round";
 ctx.lineCap = "round";
 ctx.lineWidth = 0;
+
+function clearFunction() {
+  ctx.clearRect(0,0, window.innerWidth, window.innerHeight);
+}
 
 function draw(e) {
 	if (!isDrawing) return;
