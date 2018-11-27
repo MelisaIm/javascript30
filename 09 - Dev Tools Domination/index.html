@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Console Tricks!</title>
+</head>
+<body>
+
+  <p onClick="makeGreen()">×BREAK×DOWN×</p>
+  <footer>
+    <span>Open up the Console! cmd + opt + j on mac</span></br> <span> <a href="https://github.com/MelisaIm/javascript30">Melisa Im</a> | <a href="https://www.javascript30.com">JavaScript30 Challenge</a></span>
+  </footer>
+  <script>
+    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+
+    function makeGreen() {
+      const p = document.querySelector('p');
+      p.style.color = '#BADA55';
+      p.style.fontSize = '50px';
+    }
+
+    // Regular
+    console.log("%c console.log('hello') returns:", "font-size: 15px; background: red; color:white");
+    console.log('hello');
+
+    // Interpolated
+    console.log("%c console.log('Hello I am a %s string!', '💩') returns", "font-size: 15px; background: orange; color:black");
+    console.log('Hello I am a %s string!', '💩');
+
+    // Styled
+    console.log("%c console.log('%c I am some great text', 'font-size:50px; background:blue') returns", "font-size: 15px; background: yellow; color:black");
+    console.log('%c I am some great text', 'font-size:50px; background:blue');
+
+    // warning!
+    console.log("%c console.warn('OH NOOOOO')", "font-size: 15px; background: lime; color:black");
+    console.warn('OH NOOOOO');
+
+    // Error :|
+    console.log("%c console.error('Shit!') returns", "font-size: 15px; background: darkgreen; color:white");
+    console.error('Shit!');
+
+    // Info
+    console.log("%c console.info('Crocodiles eat 3-4 people per year') returns", "font-size: 15px; background: cyan; color:black");
+    console.info('Crocodiles eat 3-4 people per year');
+
+    // Testing
+    console.log("%c console.assert(1 === 2, 'That's wrong!') returns", "font-size: 15px; background: blue; color:white");
+    console.assert(1 === 2, "That's wrong!");
+
+    // clearing
+    console.log("%c console.clear() clears the console", "font-size: 15px; background: darkblue; color:white");
+
+    // Viewing DOM Elements
+    const p = document.querySelector('p');
+    console.log("%c console.log(p) returns", "font-size: 15px; background: blueviolet; color:white");
+    console.log(p);
+    console.log("%c console.dir(p) returns", "font-size: 15px; background: indigo; color:white");
+    console.dir(p);
+
+    // Grouping together
+  console.log("%c dogs.forEach(dog => {" + "\n" +
+    "// groupCollapsed by default will have the tabs closed" + "\n" +
+      "console.group(`${dog.name}`);" + "\n" +
+      "console.log(`This is ${dog.name}`);" + "\n" +
+      "console.log(`${dog.name} is ${dog.age} years old`);" + "\n" +
+      "console.log(`${dog.name} is ${dog.age * 7} dog years old`);" + "\n" +
+      "console.groupEnd(`${dog.name}`);" + "\n" +
+    "} returns)", "font-size: 15px; background: darkmagenta; color:white");
+    dogs.forEach(dog => {
+      // groupCollapsed by default will have the tabs closed
+      console.group(`${dog.name}`);
+      console.log(`This is ${dog.name}`);
+      console.log(`${dog.name} is ${dog.age} years old`);
+      console.log(`${dog.name} is ${dog.age * 7} dog years old`);
+      console.groupEnd(`${dog.name}`);
+    });
+
+    // counting
+console.log(`%c console.count('Wes')
+    console.count('Wes')
+    console.count('Mary')
+    console.count('Mary')
+    console.count('Wes')
+    console.count('Wes')
+    console.count('Julie')
+    console.count('Wes') returns`, "font-size: 15px; background: magenta; color:white");
+    console.count('Wes')
+    console.count('Wes')
+    console.count('Mary')
+    console.count('Mary')
+    console.count('Wes')
+    console.count('Wes')
+    console.count('Julie')
+    console.count('Wes')
+
+    // timing
+    console.log(`%c console.time('fetching data');
+    fetch('https://api.github.com/users/wesbos')
+    .then(data => data.json())
+    .then(data => {
+      console.timeEnd('fetching data');
+      console.log(data);
+    }) returns ...`, "font-size: 15px; background: violet; color:white");
+    console.time('fetching data');
+    fetch('https://api.github.com/users/wesbos')
+    .then(data => data.json())
+    .then(data => {
+      console.log("%c...THIS!", "font-size: 15px; background:violet; color: white")
+      console.timeEnd('fetching data');
+      console.log(data);
+    })
+
+    console.log("%c console.table(dogs) returns", "font-size: 15px; background: pink; color:black");
+    console.table(dogs);
+
+  </script>
+</body>
+</html>
