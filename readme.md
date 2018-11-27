@@ -13,4 +13,5 @@ Grab the course at [https://JavaScript30.com](https://JavaScript30.com)
 11/22/18 Day 5: Flex Gallery http://mim_js30_flexgallery.surge.sh <br>
 11/23/18 Day 6: Type Ahead http://mim_js30_typeahead.surge.sh <br>
 11/24/18 Day 7: Array Cardio 2 http://mim_js30_arrays2.surge.sh/ <br>
-11/25/18 Day 8: HTML5 Canvas http://mim_js30_canvasfun.surge.sh/
+11/25/18 Day 8: HTML5 Canvas http://mim_js30_canvasfun.surge.sh/ <br>
+11/26/18 Day 9: Dev Tools Domination mim_js30_devtools.surge.sh <br>
