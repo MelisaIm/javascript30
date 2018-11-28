@@ -56,6 +56,7 @@
    When a user clicks a checkbox, holds Shift, and then clicks another checkbox a few rows down, all the checkboxes inbetween those two checkboxes should be checked.
 
   -->
+  <button onclick="clearFunction()">CLEAR SELECTION</button>
   <div class="inbox">
     <div class="item">
       <input type="checkbox">
@@ -94,6 +95,9 @@
       <p>Don't forget to tweet your result!</p>
     </div>
   </div>
+  <footer>
+  <span><a href="https://github.com/MelisaIm/javascript30">Melisa Im</a> | <a href="https://www.javascript30.com">JavaScript30 Challenge</a> </span>
+</footer>
 
 <script>
 // PSEUDOCODE
@@ -134,13 +138,17 @@ window.addEventListener('keydown', e => {
   if (e.key === "Shift") {
     holding = true;
   }
-})
+});
 
 window.addEventListener('keyup', e => {
   if (e.key === "Shift") {
     holding = false;
   }
-})
+});
+
+function clearFunction() {
+  inputArray.forEach(input => input.checked = false);
+}
 </script>
 </body>
 </html>
