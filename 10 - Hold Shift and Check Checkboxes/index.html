@@ -100,19 +100,45 @@
 // Using array of inputs keep track of indexes
 // when one is selected AND shift is held AND another item is selected
 // also mark as selected everything in between
-
+let indexB;
+let indexA;
+let holding = false;
 const inputArray = [...document.getElementsByTagName("input")];
 
-inputArray.forEach(input => console.log(input.checked));
 window.addEventListener('click', (e) => {
   if (e.target.type === "checkbox") {
-    console.log(e.target.nextElementSibling.innerHTML)
+    const text = e.target.nextElementSibling.innerHTML;
+    if (holding && indexA > -1) {
+      indexB = inputArray.findIndex(input => input.nextElementSibling.innerHTML === text);
+      if (indexA > indexB) {
+        inputArray.forEach((input, index) => {
+          if (index < indexA && index > indexB) {
+            input.checked = true;
+          }
+        })
+      }
+      if (indexA < indexB) {
+        inputArray.forEach((input, index) => {
+          if (index < indexB && index > indexA) {
+            input.checked = true;
+          }
+        })
+      }
+    } else {
+      indexA = inputArray.findIndex(input => input.nextElementSibling.innerHTML === text);
+    }
   }
 });
 window.addEventListener('keydown', e => {
 
   if (e.key === "Shift") {
-    console.log(e);
+    holding = true;
+  }
+})
+
+window.addEventListener('keyup', e => {
+  if (e.key === "Shift") {
+    holding = false;
   }
 })
 </script>
