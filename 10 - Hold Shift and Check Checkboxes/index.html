@@ -75,7 +75,7 @@
     </div>
     <div class="item">
       <input type="checkbox">
-      <p>Everything inbetween should also be set to checked</p>
+      <p>Everything in between should also be set to checked</p>
     </div>
     <div class="item">
       <input type="checkbox">
@@ -96,6 +96,25 @@
   </div>
 
 <script>
+// PSEUDOCODE
+// Using array of inputs keep track of indexes
+// when one is selected AND shift is held AND another item is selected
+// also mark as selected everything in between
+
+const inputArray = [...document.getElementsByTagName("input")];
+
+inputArray.forEach(input => console.log(input.checked));
+window.addEventListener('click', (e) => {
+  if (e.target.type === "checkbox") {
+    console.log(e.target.nextElementSibling.innerHTML)
+  }
+});
+window.addEventListener('keydown', e => {
+
+  if (e.key === "Shift") {
+    console.log(e);
+  }
+})
 </script>
 </body>
 </html>
