@@ -17,3 +17,4 @@ Grab the course at [https://JavaScript30.com](https://JavaScript30.com)
 11/26/18 Day 9: Dev Tools Domination http://mim_js30_devtools.surge.sh <br>
 11/27/18 Day 10: Hold Shift and Check Checkboxes http://mim_js30_holdshift.surge.sh/ <br>
 11/28/18 Day 11: Custom Video Player http://mim_js30_videoplayer.surge.sh <br>
+11/29/18 Day 12: Key Sequence Detection http://mim_js30_unicorns.surge.sh <br>
