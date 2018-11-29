@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Key Detection</title>
+  <script type="text/javascript" src="http://www.cornify.com/js/cornify.js"></script>
+<style>
+  div {
+    font-size: 20px;
+    background-color: black;
+    color: white;
+  }
+  a {
+    color: white;
+  }
+
+  #rainbow {
+    background: red; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left, orange, yellow, green, cyan, blue, violet);
+    background: -o-linear-gradient(left, orange, yellow, green, cyan, blue, violet);
+    background: linear-gradient(to right, orange, yellow, green, cyan, blue, violet); /* For Safari 5.1 to 6.0 */ /* For Opera 11.1 to 12.0 */ /* For Firefox 3.6 to 15 */ /* Standard syntax (must be last) */
+      }
+</style>
+</head>
+<body>
+  <div>
+  <span><a href="https://github.com/MelisaIm/javascript30">Melisa Im</a> | <a href="https://www.javascript30.com">JavaScript30 Challenge</a> | <span id="rainbow">ADD UNICORNS</span> type "mimjs30"</span>
+</div>
+<script>
+const keys = [];
+const secretCode = 'mimjs30'
+
+function checkSequence(e) {
+  keys.push(e.key)
+  keys.splice(-secretCode.lenght - 1, keys.length - secretCode.length);
+  if (keys.join('').includes(secretCode)) {
+    cornify_add();
+  }
+}
+window.addEventListener('keyup', checkSequence);
+
+</script>
+</body>
+</html>
